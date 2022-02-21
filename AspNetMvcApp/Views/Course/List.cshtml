@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Student>
+@{
     Layout = null;
 }
 
@@ -13,7 +14,26 @@
 </head>
 
 <body>
-    course/index list
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.Email</td>
+                <td>@student.Phone</td>
+            </tr>
+            }
+        </tbody>
+
+    </table>
 </body>
 </html>
 

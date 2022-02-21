@@ -1,0 +1,51 @@
+﻿@using AspNetMvcApp.Models
+@model Student
+@{
+    Layout = null;
+} 
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+</head>
+
+<body>
+    <form method="post" asp-action="apply">
+        <p>
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" />
+
+        </p>
+        <p>
+            <label asp-for="Email">Email</label>
+            <input asp-for="Email" />
+
+        </p>
+        <p>
+            <label asp-for="Phone">Phone</label>
+            <input asp-for="Name" />
+
+        </p>
+        <p>
+            <label asp-for="WillAttend">WillAttend</label>
+            <select asp-for="WillAttend">
+            <option value="">Select an option</option>
+            <option value="true">Yes,I will attend</option>
+            <option value="false">No,I will no attend</option>
+            </select>
+
+        </p>
+        <button type="submit">Submit</button>
+
+
+
+
+    </form>
+</body>
+</html>
+

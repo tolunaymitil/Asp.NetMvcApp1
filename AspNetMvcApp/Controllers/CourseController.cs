@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspNetMvcApp.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,25 @@ namespace AspNetMvcApp.Controllers
         }
         public ViewResult List()
         {
+            var liste=Repository.Students.Where(i => i.WillAttend == true);
+            
+            return View(liste);
+        }
+        [HttpGet]
+        public ViewResult Apply()
+        {
             return View();
+        }
+        [HttpPost]
+        public ViewResult Apply(Student student)
+        {
+            //Studen bilgisini veritabanına kayıt et.
+            //Model binding
+            //Sanal veritabanı oluştur ve kayıt et. 
+
+            Repository.AddStudent(student);
+
+            return View("Thanks",student);
         }
 
 
